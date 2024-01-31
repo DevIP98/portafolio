@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use App\Models\Navitem;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,11 +14,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory()->create([
+            'name' => 'dev_ip',
+            'email' => 'ip1805x@gmail.com',
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Navitem::factory()->create([
+            'label' => 'Hola',
+            'link'  => '#hola'
+        ]);
+
+       Navitem::factory()->create([
+           'label' => 'Proyectos',
+           'link'  => '#proyectos'
+       ]);
+
+       Navitem::factory()->create([
+           'label' => 'Contacto',
+           'link'  => '#contacto'
+       ]);
     }
 }
