@@ -13,6 +13,7 @@ class Navigation extends Component
     {
         $this->items = Navitem::all();
     }
+
     public function render()
     {
         return view('livewire.navigation.navigation');

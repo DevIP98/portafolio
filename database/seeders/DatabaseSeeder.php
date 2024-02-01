@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Navitem;
+use Illuminate\Database\Seeder;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,24 +15,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory()->create([
-            'name' => 'dev_ip',
-            'email' => 'ip1805x@gmail.com',
+         \App\Models\User::factory()->create([
+             'name' => 'dev_ip',
+             'email' => 'ip@code.com',
+         ]);
+
+         Navitem::factory()->create([
+             'label' => 'Hola',
+             'link'  => '#hola'
+         ]);
+
+        Navitem::factory()->create([
+            'label' => 'Proyectos',
+            'link'  => '#proyectos'
         ]);
 
         Navitem::factory()->create([
-            'label' => 'Hola',
-            'link'  => '#hola'
+            'label' => 'Contacto',
+            'link'  => '#contacto'
         ]);
-
-       Navitem::factory()->create([
-           'label' => 'Proyectos',
-           'link'  => '#proyectos'
-       ]);
-
-       Navitem::factory()->create([
-           'label' => 'Contacto',
-           'link'  => '#contacto'
-       ]);
     }
 }
