@@ -11,7 +11,7 @@ use Tests\TestCase;
 
 class NavigationTest extends TestCase
 {
-    // use RefreshDatabase;
+    use RefreshDatabase;
 
     /** @test */
     public function navigation_component_can_be_rendered()
