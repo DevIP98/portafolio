@@ -15,13 +15,13 @@ class NavigationTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function navigation_component_can_be_rendered()
+    public function componente_navegacion_puede_renderizarse()
     {
         $this->get('/')->assertStatus(200)->assertSeeLivewire('navigation.navigation');
     }
 
     /** @test */
-    public function component_can_load_items_navigation()
+    public function componente_puede_cargar_elementos_navegacion()
     {
         $items = Navitem::factory(3)->create();
 
@@ -31,7 +31,7 @@ class NavigationTest extends TestCase
     }
 
     /** @test */
-    public function only_admin_can_see_navigation_actions()
+    public function solo_admin_puede_ver_acciones_de_navegacion()
     {
         $user = User::factory()->create();
 
@@ -39,5 +39,16 @@ class NavigationTest extends TestCase
             ->assertStatus(200)
             ->assertSee(__('Edit'))
             ->assertSee(__('New'));
+    }
+
+    /** @test */
+    public function huespedes_no_pueden_ver_acciones_de_navegacion()
+    {
+        // Livewire::test(Navigation::class)
+        //     ->assertStatus(200)
+        //     ->assertDontSee(__('Edit'))
+        //     ->assertDontSee(__('New'));
+
+        // $this->assertGuest();
     }
 }
