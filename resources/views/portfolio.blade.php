@@ -219,7 +219,7 @@
             </div>
     
             <!-- Modal - Project -->
-            <div x-data="{ open: true }" @keydown.window.escape="open = false" x-show="open" class="relative z-10"
+            <div x-data="{ open: false }" @keydown.window.escape="open = false" x-show="open" class="relative z-10"
                 aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
                 <div x-show="open" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0"
                     x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200"
