@@ -72,11 +72,11 @@
                         :items="$items" />
                     <!-- Aqui botones edit y add -->
                     {{-- @auth --}}
-                    <x-actions.action class="block px-2 text-yellow-500 hover:text-blue-500"
+                    <x-actions.action wire:click.prevent="openSlide" class="block px-2 text-yellow-500 hover:text-blue-500"
                         title="{{ __('Edit') }}">
                         <x-icons.edit />
                     </x-actions.action>
-                    <x-actions.action class="block px-2 text-yellow-500 hover:text-blue-500"
+                    <x-actions.action wire:click.prevent="openSlide(true)" class="block px-2 text-yellow-500 hover:text-blue-500"
                         title="{{ __('New') }}">
                         <x-icons.add />
                     </x-actions.action>
@@ -86,4 +86,7 @@
         </div>
     </div>
     <!-- slideover add/edit -->
+    <x-modals.slideover>
+                
+    </x-modals.slideover>
 </section>

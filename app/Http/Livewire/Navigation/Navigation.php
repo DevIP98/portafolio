@@ -8,10 +8,18 @@ use Livewire\Component;
 class Navigation extends Component
 {
     public $items;
+    public $openSlideOver = false;
+    public $addNewItem = false;
 
     public function mount()
     {
         $this->items = Navitem::all();
+    }
+
+    public function openSlide($addNewItem = false)
+    {
+        $this->addNewItem = $addNewItem;
+        $this->openSlideOver = true;
     }
 
     public function render()
